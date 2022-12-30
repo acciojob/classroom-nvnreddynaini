@@ -31,11 +31,19 @@ public class StudentRepository {
     }
 
     public Student getStudentByNameFromDb(String name){
-        return studentDb.get(name);
+        if(studentDb.containsKey(name)){
+            return studentDb.get(name);
+        }else{
+            return null;
+        }
     }
 
     public Teacher getTeacherByNameFromDb(String name){
-        return teacherDb.get(name);
+        if(teacherDb.containsKey(name)) {
+            return teacherDb.get(name);
+        }else{
+            return null;
+        }
     }
 
     public List<String> getStudentsByTeacherNameFromDb(String teacher){
